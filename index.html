@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Game</title>
+    <script src="game.js"></script>
+  </head>
+  <body>
+    <h1>Click the Button!</h1>
+    <button id="clickButton">Click Me</button>
+    <p id="clickCount"></p>
+
+    <script>
+      $(document).ready(() => {
+        $("#clickButton").click(() => {
+          $.get("/click", (data) => {
+            $("#clickCount").text(data);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
